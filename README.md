@@ -21,3 +21,9 @@ npm run dev
 traffic_simulator.py - generates fake IP packets and returns it
 server.py - establishes the WebSocket connection and continuously calls the packet generator and sends it through the connection
 App.jsx - Displays the IP addresses 
+
+## What's next?
+ - Suspicious activity detection using yellow and red flags
+ - Live traffic graph
+ - Top 5 IPs by bandwidth
+ - Protocol breakdown

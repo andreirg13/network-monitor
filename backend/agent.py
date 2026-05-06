@@ -16,12 +16,11 @@ def analyze_packets(packets):
     {packet_string}
     Analyze these packets and provide insights on potential security threats, unusual patterns, or any other noteworthy observations. Focus on identifying any anomalies or suspicious activities that could indicate a security issue.
     And categorize the packets in three categories: green, yellow, and red.
-    The output format should be ONLY a JSON object with the following structure:
+    The output format should ONLY be the raw JSON object. No markdown, no backticks, no explanation. Just the JSON. use the following structure:
     -"threat_level: "green", "yellow", or "red"
     -suspicious_ips: a list of IP addresses that are considered suspicious
     -reason: plain english explanation of why packets are categorized as they are.
-    -recommended actions: what should be done
-    """
+    -recommended_actions: what should be done"""
 
     response = client.messages.create(
         model="claude-sonnet-4-20250514",

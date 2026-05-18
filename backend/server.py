@@ -15,10 +15,10 @@ async def websocket_endpoint(websocket: WebSocket):
             packet = generate_traffic()
             batch.append(packet)
             if len(batch) >= batch_size:
-                analysis = await asyncio.to_thread(analyze_packets, batch)
+               # analysis = await asyncio.to_thread(analyze_packets, batch)
                 await websocket.send_json({
-                    "packets": batch,
-                    "analysis": analysis
+                    "packets": batch
+                #  "analysis": analysis
                 })
                 batch = []
             await asyncio.sleep(1)

@@ -18,7 +18,8 @@ function App() {
     }
 
   }, [])
-  const IPlist = packets.map((packet, index) => <li key={`${packet.source_ip} - ${packet.timestamp}`}>{packet.source_ip}</li>)
+  const IPlist = packets.map((packet, index) => <li key={`${packet.source_ip} - ${packet.timestamp}`}>Source IP: {packet.source_ip} - Timestamp: {packet.timestamp} - Bytes: {packet.bytes} - Protocol: {packet.protocol}</li>)
+  
   const analysisMessage = analysis ? (
     <div>
         <p>Threat Level: {analysis.threat_level}</p>

@@ -18,7 +18,12 @@ function App() {
     }
 
   }, [])
-  const IPlist = packets.map((packet, index) => <li key={`${packet.source_ip} - ${packet.timestamp}`}>Source IP: {packet.source_ip} - Timestamp: {packet.timestamp} - Bytes: {packet.bytes} - Protocol: {packet.protocol}</li>)
+  const IPlist = packets.map((packet, index) => <tr key={`${packet.source_ip} - ${packet.timestamp}`}>
+    <td>{packet.source_ip}</td>
+    <td>{packet.timestamp}</td>
+    <td>{packet.bytes}</td>
+    <td>{packet.protocol}</td>
+  </tr>)
   
   const analysisMessage = analysis ? (
     <div>
@@ -30,9 +35,20 @@ function App() {
 ) : null
   return (
     <div>
-      <ul>
-        {IPlist}
-      </ul>
+      <table>
+        <thead>Packets</thead>
+        <tbody>
+          <tr>
+            <th>Source IP</th>
+            <th>Timestamp</th>
+            <th>Bytes</th>
+            <th>Protocol</th>
+          </tr>
+          {IPlist}
+          
+        </tbody>
+      </table>
+      
       {analysisMessage}
     </div>
   )
